@@ -6,7 +6,8 @@ public class Rectangle {
 
     public Rectangle(double width, double height) {
         this.width = checkInputParameter(width, "width");
-        this.height = height;
+     //   this.height = height;
+        this.height = checkInputParameter(height, "height");
     }
 
     /**
@@ -16,7 +17,9 @@ public class Rectangle {
      */
     public double calculateArea() {
         // please implement method
-        return 0;
+        double area = width*height;
+
+        return area;
     }
 
     /**
@@ -24,8 +27,8 @@ public class Rectangle {
      * @return den Umfang
      */
     public double calculateScope() {
-        // please implement method
-        return 0;
+        double scope = width*2 + height*2;
+        return scope;
     }
 
     /**
@@ -34,6 +37,7 @@ public class Rectangle {
      * @param parameterName the name of the parameter (e.g. width)
      * @return              the input value if greater than 0
      */
+
     public double checkInputParameter(double input, String parameterName) {
         if (input <= 0) {
             throw new IllegalArgumentException("Parameter " + parameterName + " muss größer 0 sein!");
